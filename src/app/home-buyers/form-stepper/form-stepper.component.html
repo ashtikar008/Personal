@@ -1,0 +1,53 @@
+<mat-stepper linear [orientation]="(stepperOrientation | async)!" #stepper (selectionChange)="stepChange($event)">
+    <mat-step errorMessage="borrower" [stepControl]="formOneControl ? validStep:invalidStep">
+        <ng-template matStepLabel>Borrower</ng-template>
+        <app-form-one></app-form-one>
+        <app-form-seven></app-form-seven>
+        <button *ngIf="formService.borrowerIndex > 0" mat-raised-button matStepperPrevious
+            (click)="back('borrowerParties');scrollToTop()" color="primary">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('borrowerParties');scrollToTop();">Next</button>
+    </mat-step>
+    <mat-step *ngIf="!guarantorAvailable">
+        <ng-template matStepLabel>Guarantor Check</ng-template>
+        <app-form-two></app-form-two>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('guarantorCheck')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('guarantorCheck')">Next</button>
+    </mat-step>
+    <mat-step errorMessage="guarantor" [stepControl]="formThreeControl ? validStep:invalidStep"
+        *ngIf="formService.guarantorCheck == 'yes' || guarantorAvailable">
+        <ng-template matStepLabel>Guarantor Details</ng-template>
+        <app-form-three></app-form-three>
+    </mat-step>
+    <mat-step *ngIf="!investorAvailable">
+        <ng-template matStepLabel>Investor Check</ng-template>
+        <app-form-four></app-form-four>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('investorCheck')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('investorCheck')">Next</button>
+    </mat-step>
+    <mat-step errorMessage="investors" id="investors" [stepControl]="formFiveControl ? validStep:invalidStep"
+        *ngIf="formService.investorCheck == 'yes' || investorAvailable">
+        <ng-template matStepLabel>Investor Details</ng-template>
+        <app-form-five></app-form-five>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('investors')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary" (click)="next('investors')">Next</button>
+    </mat-step>
+    <mat-step errorMessage="additionalInvestor" *ngIf="isAdditionalInvestor == true">
+        <ng-template matStepLabel>Additional Investor</ng-template>
+        <app-form-six></app-form-six>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('additionalInvestor')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext
+            [color]="formService.additionalInvestor == 'yes' ? 'primary':'success'"
+            (click)="next('additionalInvestor')">
+            {{formService.additionalInvestor == 'yes' ? 'Next':'Preview'}}</button>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Preview</ng-template>
+        <app-preview-form></app-preview-form>
+    </mat-step>
+</mat-stepper>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

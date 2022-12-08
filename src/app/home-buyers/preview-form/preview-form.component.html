@@ -1,0 +1,697 @@
+<div class="container">
+    <div *ngIf="formService.formData.borrowerParties">
+        <div *ngFor="let borrower of formService.formData.borrowerParties; let i = index;">
+            <div class="mb-2 mt-3">
+                <h3 for="">Borrower Party #{{i+1}}</h3>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">First Name </label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.firstName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Last Name</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.lastName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Salutation</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.salutation}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Title Role</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.titleRole}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Address</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.address}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">City</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.city}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">State</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.stateProvinceTerritory}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">PostCode</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.PostCode}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Email Address</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.emailAddress}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">phoneNumber</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.phoneNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">DOB</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.DOB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Id</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.passportId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name On Passport</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.nameOnPassport}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Expiry</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.passportExpiry}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Driver License Id</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.driverlicenseId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name onLicense</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.nameOnDl}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Issuance State</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.stateOfIssuance}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Australian Business Number</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.australianBusinessNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Tax File Number</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.taxFileNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Name</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.accountName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">BSB</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.BSB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Number</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.accountNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Bank Name</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.bankName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Branch</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.branch}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Swift Id</label>
+                    <div class="example-container w-50">
+                        <span> {{borrower.swiftId}}</span>
+                    </div>
+                </div>
+                <div class="mb-2 mt-3 w-100">
+                    <h3 for="">Documents</h3>
+                </div>
+                <div class="w-100">
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <label class="w-50 ml-2">Identity Documents</label>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 mt-2"
+                        *ngIf="borrower.documents && borrower.documents.identity && borrower.documents.identity['PASSPORT']">
+                        <label class="w-50 ml-2">PASSPORT</label>
+                        <div class="example-container w-50">
+                            <div class="fileName">
+                                {{borrower.documents.identity['PASSPORT']}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 mt-2"
+                        *ngIf="borrower.documents && borrower.documents.identity && borrower.documents.identity['DRIVING_LICENCE']">
+                        <label class="w-50 ml-2">DRIVING_LICENCE</label>
+                        <div class="example-container w-50">
+                            <div class="fileName">
+                                {{borrower.documents.identity['DRIVING_LICENCE']}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <label class="w-50 ml-2">Financial Documents</label>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 mt-2"
+                        *ngIf="borrower.documents && borrower.documents.financial && borrower.documents.financial['IDENTITY_PAYG']">
+                        <label class="w-50 ml-2">IDENTITY_PAYG</label>
+                        <div class="example-container w-50">
+                            <div class="fileName">
+                                {{borrower.documents.financial['IDENTITY_PAYG']}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 mt-2"
+                        *ngIf="borrower.documents && borrower.documents.financial && borrower.documents.financial['SALARY_SLIP']">
+                        <label class="w-50 ml-2">SALARY_SLIP</label>
+                        <div class="example-container w-50">
+                            <div class="fileName">
+                                {{borrower.documents.financial['SALARY_SLIP']}}
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="d-flex justify-content-between w-100 mt-2">
+                        <label class="w-50 ml-2">Additional Documents</label>
+                    </div>
+                    <div  class="w-100" *ngIf="borrower.documents && borrower.documents['additionalDocuments'] && (borrower.documents['additionalDocuments'] | json) != '{}'">
+                        <div class="d-flex justify-content-between w-100 mt-2" *ngFor="let addDoc of borrower.documents.additionalDocuments|keyvalue">
+                            <div class="example-container w-100 d-flex justify-content-between">
+                                <label class="w-50 ml-2">{{addDoc.key}}</label>
+                                <div class="example-container fileName w-50">
+                                    <span>{{addDoc.value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-2 mt-3">
+        <h3 for="">Guarantor Details</h3>
+    </div>
+    <div class="row" *ngIf="formService.formData.guarantor == false">Guarantor not selected!</div>
+    <div *ngIf="formService.formData.guarantor">
+        <div>
+            <div class="row">
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">First Name </label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.firstName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Last Name</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.lastName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Salutation</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.salutation}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Title Role</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.titleRole}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Address</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.address}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">City</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.city}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">State</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.stateProvinceTerritory}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">PostCode</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.PostCode}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Email Address</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.emailAddress}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">phoneNumber</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.phoneNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">DOB</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.DOB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Id</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.passportId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name On Passport</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.nameOnPassport}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Expiry</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.passportExpiry}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Driver License Id</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.driverlicenseId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name onLicense</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.nameOnDl}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Issuance State</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.stateOfIssuance}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Australian Business Number</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.australianBusinessNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Tax File Number</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.taxFileNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Name</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.accountName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">BSB</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.BSB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Number</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.accountNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Bank Name</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.bankName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Branch</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.branch}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Swift Id</label>
+                    <div class="example-container w-50">
+                        <span> {{formService.formData.guarantor.swiftId}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mb-2 mt-3">
+                <h3 for="">Documents</h3>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Identity Documents</label>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="formService.formData.guarantor.documents && formService.formData.guarantor.documents.identity && formService.formData.guarantor.documents.identity['PASSPORT']">
+                    <label class="w-50 ml-2">PASSPORT</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{formService.formData.guarantor.documents.identity['PASSPORT']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="formService.formData.guarantor.documents && formService.formData.guarantor.documents.identity && formService.formData.guarantor.documents.identity['DRIVING_LICENCE']">
+                    <label class="w-50 ml-2">DRIVING_LICENCE</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{formService.formData.guarantor.documents.identity['DRIVING_LICENCE']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Financial Documents</label>
+
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="formService.formData.guarantor.documents && formService.formData.guarantor.documents.financial && formService.formData.guarantor.documents.financial['IDENTITY_PAYG']">
+                    <label class="w-50 ml-2">IDENTITY_PAYG</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{formService.formData.guarantor.documents.financial['IDENTITY_PAYG']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="formService.formData.guarantor.documents && formService.formData.guarantor.documents.financial && formService.formData.guarantor.documents.financial['SALARY_SLIP']">
+                    <label class="w-50 ml-2">SALARY_SLIP</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{formService.formData.guarantor.documents.financial['SALARY_SLIP']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Additional Documents</label>
+                </div>
+                <div *ngIf="formService.formData.guarantor.documents && formService.formData.guarantor.documents['additionalDocuments'] && (formService.formData.guarantor.documents['additionalDocuments'] | json) != '{}'">
+                    <div class="d-flex justify-content-between w-100 mt-2" *ngFor="let addDoc of formService.formData.guarantor.documents.additionalDocuments|keyvalue">
+                        <div class="example-container w-50 d-flex justify-content-between">
+                            <label>{{addDoc.key}}</label>
+                            <div class="example-container fileName w-50">
+                                <span>{{addDoc.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="formService.formData.investors.length == 0">
+        <div class="mb-2 mt-3">
+            <h3 for="">Investor Details</h3>
+        </div>
+        <div class="row">Investor not selected!</div>
+    </div>
+    <div *ngIf="formService.formData.investors">
+        <div *ngFor="let investor of formService.formData.investors; let i = index;">
+            <h3 class="w-100" for="">Investor Details #{{i+1}}</h3>
+            <div class="row">
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Relationship Type </label>
+                    <div class="example-container w-50">
+                        <span> {{investor.relationtype}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Investor Type </label>
+                    <div class="example-container w-50">
+                        <span> {{investor.investortype}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Tax Residence </label>
+                    <div class="example-container w-50">
+                        <span> {{investor.taxResidence}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Placement Amount </label>
+                    <div class="example-container w-50">
+                        <span> {{investor.placementAmount}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">First Name </label>
+                    <div class="example-container w-50">
+                        <span> {{investor.firstName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Last Name</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.lastName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Salutation</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.salutation}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Title Role</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.titleRole}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Address</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.address}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">City</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.city}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">State</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.stateProvinceTerritory}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">PostCode</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.PostCode}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Email Address</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.emailAddress}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">phoneNumber</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.phoneNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">DOB</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.DOB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Id</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.passportId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name On Passport</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.nameOnPassport}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Passport Expiry</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.passportExpiry}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Driver License Id</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.driverlicenseId}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Name onLicense</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.nameOnDl}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Issuance State</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.stateOfIssuance}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Australian Business Number</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.australianBusinessNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Tax File Number</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.taxFileNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Name</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.accountName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">BSB</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.BSB}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Account Number</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.accountNumber}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Bank Name</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.bankName}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Branch</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.branch}}</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Swift Id</label>
+                    <div class="example-container w-50">
+                        <span> {{investor.swiftId}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2 mt-3">
+                <h3 for="">Documents</h3>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Identity Documents</label>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="investor.documents && investor.documents.identity && investor.documents.identity['PASSPORT']">
+                    <label class="w-50 ml-2">PASSPORT</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{investor.documents.identity['PASSPORT']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="investor.documents && investor.documents.identity && investor.documents.identity['DRIVING_LICENCE']">
+                    <label class="w-50 ml-2">DRIVING_LICENCE</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{investor.documents.identity['DRIVING_LICENCE']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Financial Documents</label>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="investor.documents && investor.documents.financial && investor.documents.financial['IDENTITY_PAYG']">
+                    <label class="w-50 ml-2">IDENTITY_PAYG</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{investor.documents.financial['IDENTITY_PAYG']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100 mt-2"
+                    *ngIf="investor.documents && investor.documents.financial && investor.documents.financial['SALARY_SLIP']">
+                    <label class="w-50 ml-2">SALARY_SLIP</label>
+                    <div class="example-container w-50">
+                        <div class="fileName">
+                            {{investor.documents.financial['SALARY_SLIP']}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between w-100 mt-2">
+                    <label class="w-50 ml-2">Additional Documents</label>
+                </div>
+                <div  *ngIf="investor.documents && investor.documents['additionalDocuments'] && (investor.documents['additionalDocuments'] | json) != '{}'">
+                    <div class="d-flex justify-content-between w-100 mt-2" *ngFor="let addDoc of investor.documents.additionalDocuments|keyvalue">
+                        <div class="example-container w-50 d-flex justify-content-between">
+                            <label>{{addDoc.key}}</label>
+                            <div class="example-container fileName w-50">
+                                <span>{{addDoc.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperPrevious color="primary">Back</button>
+        <button class="ml-2" mat-raised-button color="success" (click)="submit()">Submit</button>
+    </mat-dialog-actions>
+</div>

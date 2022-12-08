@@ -1,0 +1,31 @@
+<div>
+    <form [formGroup]="formFour">
+        <div class="card">
+            <div class="card-header">
+                Investor
+            </div>
+            <div class="card-body">
+                <label class="mb-3">Investor Available <span class="text-danger">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="bondBuyerAvailable" [(ngModel)]="formService.investorCheck"
+                        formControlName="bondBuyerAvailable" value="yes" checked>
+                    <label class="form-check-label" for="yes">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="bondBuyerAvailable" [(ngModel)]="formService.investorCheck"
+                        formControlName="bondBuyerAvailable" value="no">
+                    <label class="form-check-label" for="no">
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- <div class="d-flex">
+        <button class="btn btn-primary mt-3 mb-2" (click)="back()">Back</button>
+        <button class="btn btn-primary mt-3 ml-2 mb-2"
+            [routerLink]="formFour.controls['bondBuyerAvailable'].value == 'yes' ? '/investors':'/otherDetails'">Next</button>
+    </div> -->
+</div>

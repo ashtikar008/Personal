@@ -1,0 +1,37 @@
+<mat-stepper linear [orientation]="(stepperOrientation | async)!" #stepper (selectionChange)="stepChange($event)">
+    <mat-step errorMessage="Please Fill all required fields." [stepControl]="propertyDetailsValid ? validStep:invalidStep" >
+        <ng-template matStepLabel>Property Details</ng-template>
+        <app-hash></app-hash>
+        <app-property-details></app-property-details>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('propertyDetails')">Next</button>
+    </mat-step>
+    <mat-step [stepControl]="propertyDocumentsValid ? validStep:invalidStep">
+        <ng-template matStepLabel>Property Documents</ng-template>
+        <app-property-documents></app-property-documents>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('propertyDocuments')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('propertyDocuments')">Next</button>
+    </mat-step>
+    <mat-step [stepControl]="settlementDetailsValid ? validStep:invalidStep">
+        <ng-template matStepLabel>Settlement Details</ng-template>
+        <app-settlement-details></app-settlement-details>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('settlementDetails')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('settlementDetails')">Next</button>
+    </mat-step>
+    <mat-step [stepControl]="settlementDocumentsValid ? validStep:invalidStep">
+        <ng-template matStepLabel>Settlement Documents</ng-template>
+        <app-settlement-documents></app-settlement-documents>
+        <button mat-raised-button matStepperPrevious color="primary" (click)="back('settlementDocuments')">Back</button>
+        <button class="ml-2" mat-raised-button matStepperNext color="primary"
+            (click)="next('settlementDocuments')"><span *ngIf="settlementDetails && settlementDetails.settlementDetails.invalid">Next</span><span *ngIf="settlementDetails && settlementDetails.settlementDetails.valid">preview</span></button>
+    </mat-step>
+    <mat-step *ngIf="settlementDetails && settlementDetails.settlementDetails.valid">
+        <ng-template matStepLabel>Preview</ng-template>
+        <app-preview [formData]="allFormData"></app-preview>
+    </mat-step>
+</mat-stepper>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,141 @@
+<form [formGroup]="formSeven">
+    <div class="card mb-3">
+        <div class="card-header">
+            Other Details
+        </div>
+        <div class="card-body">
+            Documents
+        </div>
+    </div>
+    <div class="mb-2 mt-3">
+        <h3 for="">Identity</h3>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4 col-lg-3 col-sm-6">
+            <label>Passport</label>
+            <div class="example-container mt-2">
+                <input class="form-control" id='PASSPORT' (change)="onFileChange($event,'PASSPORT',passport)"
+                    type="file" #passport>
+                <div class="progress mt-2" *ngIf="progress > 0 && fieldName == 'PASSPORT'">
+                    <div class="progress-bar" role="progressbar" [style.backgroundColor]="updateColor(progress)"
+                        [style.width.%]="progress" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                </div>
+                <div class="mt-2 fileName d-flex align-items-center" *ngIf="formSeven.controls['PASSPORT'].value">
+                    <span class="docID">{{formSeven.controls['PASSPORT'].value}}</span>
+                    <mat-icon class="text-danger ml-2" (click)="removeDoc('PASSPORT',passport)">
+                        delete_forever
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-3 col-sm-6">
+            <label>Driving Licence</label>
+            <div class="example-container mt-2">
+                <input class="form-control" id="DRIVING_LICENCE" (change)="onFileChange($event,'DRIVING_LICENCE',file2)"
+                    type="file" #file2>
+                <div class="progress mt-2" *ngIf="progress > 0 && fieldName == 'DRIVING_LICENCE'">
+                    <div class="progress-bar" role="progressbar" [style.backgroundColor]="updateColor(progress)"
+                        [style.width.%]="progress" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                </div>
+                <div class="mt-2 fileName d-flex align-items-center"
+                    *ngIf="formSeven.controls['DRIVING_LICENCE'].value">
+                    <span class="docID">{{formSeven.controls['DRIVING_LICENCE'].value}}</span>
+                    <mat-icon class="text-danger ml-2" (click)="removeDoc('DRIVING_LICENCE',file2)">
+                        delete_forever
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-2 mt-3">
+        <h3 for="">Financial</h3>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4 col-lg-3 col-sm-6">
+            <label>Salary Slips</label>
+            <div class="example-container mt-2">
+                <input class="form-control" id="SALARY_SLIP" (change)="onFileChange($event,'SALARY_SLIP',salarySlips)"
+                    type="file" #salarySlips multiple>
+                <div class="progress mt-2" *ngIf="progress > 0 && fieldName == 'SALARY_SLIP'">
+                    <div class="progress-bar" role="progressbar" [style.backgroundColor]="updateColor(progress)"
+                        [style.width.%]="progress" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                </div>
+                <div class="mt-2 fileName d-flex align-items-center" *ngIf="formSeven.controls['SALARY_SLIP'].value">
+                    <span class="docID">{{formSeven.controls['SALARY_SLIP'].value}}</span>
+                    <mat-icon class="text-danger ml-2" (click)="removeDoc('SALARY_SLIP',salarySlips)">
+                        delete_forever
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-3 col-sm-6">
+            <label>Payg</label>
+            <div class="example-container mt-2">
+                <input class="form-control" id="IDENTITY_PAYG" (change)="onFileChange($event,'IDENTITY_PAYG',payg)"
+                    type="file" #payg multiple>
+                <div class="progress mt-2" *ngIf="progress > 0 && fieldName == 'IDENTITY_PAYG'">
+                    <div class="progress-bar" role="progressbar" [style.backgroundColor]="updateColor(progress)"
+                        [style.width.%]="progress" aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                </div>
+                <div class="mt-2 fileName d-flex align-items-center" *ngIf="formSeven.controls['IDENTITY_PAYG'].value">
+                    <span class="docID">{{formSeven.controls['IDENTITY_PAYG'].value}}</span>
+                    <mat-icon class="text-danger ml-2" (click)="removeDoc('IDENTITY_PAYG',payg)">
+                        delete_forever
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+<div class="row" *ngIf="(additionalDocuments | json) != '{}'">
+    <div class="col-lg-6 col-md-12 mt-4">
+        <div class="form-group col-md-6 col-lg-12 col-sm-6">
+            <label>Additional Documents</label>
+            <div class="example-container mt-2" *ngFor="let doc of additionalDocuments | keyvalue">
+                <div class="mt-2 col-6 fileName">{{doc.key}} <mat-icon class="text-danger" (click)="deleteDoc(doc.key)">
+                        delete_forever</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mt-3">
+        <form action="" [formGroup]="additionalDocForm">
+            <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Additional Documents</legend>
+                <div class="form-group col-md-6 col-lg-6 col-sm-12">
+                    <div class="mt-2">
+                        <label for="">Title <span class="text-danger">*</span></label>
+                        <div class="example-container col-lg-6 col-md-6 col-sm-12 p-0">
+                            <input class="form-control" formControlName="title" placeholder="Title of Document"
+                                type="text" required>
+                            <mat-error
+                                *ngIf="additionalDocForm.controls['title'].touched && additionalDocForm.controls['title'].invalid">
+                                Title is required
+                            </mat-error>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label>File</label>
+                        <div class="example-container">
+                            <input class="form-control" formControlName="additionalDoc" (change)="validateFile(file4)" type="file" #file4>
+                            <div class="progress mt-2" *ngIf="progress > 0 && fieldName == 'additionalDoc'">
+                                <div class="progress-bar" role="progressbar"
+                                    [style.backgroundColor]="updateColor(progress)" [style.width.%]="progress"
+                                    aria-valuemin="0" aria-valuemax="100">{{progress}}%</div>
+                            </div>
+                            <div class="mt-2">{{getFileName(file4)}}</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-success" (click)="onFileChange(file4,'additionalDoc',file4)"
+                            [disabled]="additionalDocForm.invalid">Add Additional Document</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

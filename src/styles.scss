@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+  
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(247, 244, 242) !important;
+    max-width: 90%;
+    margin: auto!important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    box-shadow: 1px 1px 3px 0px grey;
+}
+
+.row {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin: 10px 0px !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background: white;
+}
+
+.row:hover {
+    box-shadow: 0px 0px 12px -1px grey;
+}
+
+label {
+    font-weight: 500;
+}
+
+form {
+    padding: 10px 0px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+    background-color: white;
+}
+
+.mat-stepper-horizontal {
+    background-color: rgb(247, 244, 242)
+}
+
+.mat-success {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+.mat-horizontal-content-container{
+    padding: 3% !important;
+}
+.mat-horizontal-stepper-content {
+    margin-bottom: 0.25rem;
+}
+.mat-vertical-content-container{
+    margin-left: 0 !important;
+}
+.mat-vertical-content {
+    padding: 0.75rem !important;
+}

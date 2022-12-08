@@ -1,0 +1,22 @@
+.fileName {
+    white-space: nowrap;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px gray;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row {
+    padding: 1rem 1rem;
+    box-shadow: 0px 0px 10px 2px darkgrey;
+    background: white !important;
+}
+
+.headingLabel {
+    background: darkgray;
+    width: 100%;
+    padding: 7px;
+    color: white;
+}

@@ -1,0 +1,150 @@
+<form [formGroup]="propertyDetails">
+    <div class="mb-2 mt-2">
+        <h3 for="">Property Type</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-6 p-0">
+            <div class="d-md-flex d-lg-flex">
+                <div class="form-group col-12 col-md-6 col-lg-6 col-sm-6">
+                    <label>Property Type <span class="text-danger">*</span></label>
+                    <div class="example-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Property Type</mat-label>
+                            <mat-select formControlName="propertyType" required>
+                                <mat-option>Choose</mat-option>
+                                <mat-option value="House">House</mat-option>
+                                <mat-option value="TownHouse">TownHouse/Unit</mat-option>
+                                <mat-option value="Apartment">Apartment</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="propertyDetails.controls['propertyType'].invalid"> property type is
+                                required
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="form-group col-12 col-md-6 col-lg-6 col-sm-6">
+                    <label>Number of Bedrooms <span class="text-danger">*</span></label>
+                    <div class="example-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choose</mat-label>
+                            <mat-select formControlName="numberOfBedrooms" required>
+                                <mat-option>select</mat-option>
+                                <mat-option value='1'>1</mat-option>
+                                <mat-option value='2'>2</mat-option>
+                                <mat-option value='3'>3</mat-option>
+                                <mat-option value='4+'>4+</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="propertyDetails.controls['numberOfBedrooms'].invalid"> Number of Bedrooms
+                                is
+                                required </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-lg-12 col-sm-12">
+                <label>Postcode <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Postcode" formControlName="propertyTypePostcode" type="text" required>
+                        <mat-error *ngIf="propertyDetails.controls['propertyTypePostcode'].invalid">invalid postcode
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-6 p-0">
+            <div class="form-group col-md-12 col-lg-12 col-sm-12">
+                <label>Property Class <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Property Class" formControlName="propertyClassId" type="string" required>
+                        <mat-error *ngIf="propertyDetails.controls['propertyClassId'].invalid">invalid Property Class
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mb-2 mt-3">
+        <h3 for="">Purchase Details</h3>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12 col-lg-12 col-sm-12">
+            <label>Google Address</label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Search Address" appGooglePlaces (onSelect)="setAddress($event)" #address>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Property Address <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Property Address" formControlName="address" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Property Title Volume <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Property Title Volume" type="string" formControlName="propertyTitleVolume" required>
+                    <mat-error *ngIf="propertyDetails.controls['propertyTitleVolume'].invalid">Property Title Volume is
+                        required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Property Folio# <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Property Folio" type="string" formControlName="propertyFolioNo" required>
+                    <mat-error *ngIf="propertyDetails.controls['propertyFolioNo'].invalid">Property Folio is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Mortgage Interest Rate <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Mortgage Interest Rate" type="string" formControlName="mortgageInterestRate"
+                        required>
+                    <mat-error *ngIf="propertyDetails.controls['mortgageInterestRate'].invalid">Mortgage Interest Rate
+                        is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Loan Amount Request <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Loan Amount Request" type="text" formControlName="loanAmountRequest" required>
+                    <mat-error *ngIf="propertyDetails.controls['loanAmountRequest'].invalid">Loan Amount Request is
+                        required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-4 col-lg-4 col-sm-6">
+            <label>Property Purchase Price <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Property Purchase Price" type="string" formControlName="propertyPurchasePrice"
+                        required>
+                    <mat-error *ngIf="propertyDetails.controls['propertyPurchasePrice'].invalid">Property Purchase Price
+                        is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</form>
