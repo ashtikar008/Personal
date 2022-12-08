@@ -1,0 +1,43 @@
+<div class="container" *ngIf="formData">
+    <div *ngFor="let data of formData | keyvalue ; let i = index">
+        <div class="mb-2 mt-3">
+            <h3 for="">{{getFieldNames(data.key)}}</h3>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-between w-100 mt-2"
+                *ngFor="let newData of formData[data.key+''] | keyvalue">
+                <label class="w-50 ml-2"
+                    *ngIf="newData.key != 'vendorBankingDetails'">{{getFieldNames(newData.key)}}</label>
+                <div class="example-container w-50" *ngIf="typeOf(newData.value) != 'object'">
+                    <span>{{newData.value}}</span>
+                </div>
+                <div class="example-container w-50" *ngIf="typeOf(newData.value) === 'object'">
+                    <div *ngIf="newData.key != 'vendorBankingDetails' && 
+                        formData[data.key+''][newData.key+'']&&  
+                        formData[data.key+''][newData.key+'']['documentName']" class="fileName">
+                        {{formData[data.key+''][newData.key+'']['documentName']}}
+                    </div>
+                    <div *ngIf="newData.key != 'vendorBankingDetails' && 
+                        formData[data.key+''][newData.key+'']&&  
+                        formData[data.key+''][newData.key+'']['fileName']" class="fileName">
+                        {{formData[data.key+''][newData.key+'']['fileName']}}
+                    </div>
+                    <div *ngIf="newData.key == 'vendorBankingDetails'" style="width:200%;">
+                        <h3 for="" class="headingLabel">{{getFieldNames(newData.key)}}</h3>
+                        <div class="d-flex justify-content-between w-100"
+                            *ngFor="let venData of formData[data.key+''][newData.key+''] | keyvalue">
+                            <label class="w-50 ml-2">{{getFieldNames(venData.key)}}</label>
+                            <div class="example-container w-50">
+                                <span>{{venData.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button matStepperPrevious color="primary">Back</button>
+        <button class="ml-2" mat-raised-button color="success" (click)="submit()">Submit</button>
+    </mat-dialog-actions>
+</div>

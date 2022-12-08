@@ -1,0 +1,20 @@
+<form action="" [formGroup]="hashForm">
+    <div class="row">
+    <div class="form-group col-md-4 col-lg-3 col-sm-6">
+        <label>Borrower Hash <span class="text-danger">*</span></label>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Homebuyer ID" formControlName="borrowerHash" required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="form-group col-md-4 col-lg-3 col-sm-6">
+        <label>Scenario Hash <span class="text-danger">*</span></label>
+        <div class="example-container">
+            <mat-form-field appearance="fill">
+                <input matInput placeholder="Scenario ID" formControlName="scenarioHash" required>
+            </mat-form-field>
+        </div>
+    </div>
+    </div>
+</form>

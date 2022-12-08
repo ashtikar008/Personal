@@ -1,0 +1,330 @@
+<div>
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel"></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form>
+              <div class="user-box">
+                <input type="text" name="" required="">
+                <label>Username</label>
+              </div>
+              <div class="user-box">
+                <input type="password" name="" required="">
+                <label>Password</label>
+              </div>
+              <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+              </a>
+            </form>
+          </div>
+      </div>
+    </div> -->
+
+    <form [formGroup]="hashForm">
+        <div class="row">
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Borrower ID <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Borrower ID" formControlName="borrowerId" required>
+                        <mat-error *ngIf="hashForm.controls['borrowerId'].invalid">borrow id is required </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Scenario ID <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Scenario ID" formControlName="scenarioId" required>
+                        <mat-error *ngIf="hashForm.controls['scenarioId'].invalid">Secenario id is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="formOne">
+        <div class="mb-2 mt-3">
+            <h3 for="">Personal Details</h3>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Salutation <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select Salutation</mat-label>
+                        <mat-select formControlName="salutation" required>
+                            <mat-option>Select Salutation</mat-option>
+                            <mat-option value="mr">Mr</mat-option>
+                            <mat-option value="mrs">Mrs</mat-option>
+                            <mat-option value="ms">Ms</mat-option>
+                            <mat-option value="miss">Miss</mat-option>
+                            <mat-option value="TBD">TBD</mat-option>
+                            <mat-option value="test">Test</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formOne.controls['salutation'].invalid"> Salutation is required </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>First Name <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="First Name" formControlName="firstName" required>
+                        <mat-error *ngIf="formOne.controls['firstName'].invalid">First name is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Last Name <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Last Name" formControlName="lastName" required>
+                        <mat-error *ngIf="formOne.controls['lastName'].invalid">Last name is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Title/Role <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select role</mat-label>
+                        <mat-select formControlName="titleRole">
+                            <mat-option>Select role</mat-option>
+                            <mat-option value="self">Self</mat-option>
+                            <mat-option value="otherindividual">Other individual</mat-option>
+                            <mat-option value="director">Director</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formOne.controls['titleRole'].hasError('required')">Please choose Role
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-lg-12 col-sm-12">
+                <label>Google Address</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Search Address" appGooglePlaces (onSelect)="setAddress($event)"
+                            #address>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Address</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Address" (onSelect)="checkAddress()" formControlName="address">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>City</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="City" formControlName="city">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>State/Province/Territory</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select state</mat-label>
+                        <mat-select formControlName="stateProvinceTerritory">
+                            <mat-option>Select state</mat-option>
+                            <mat-option *ngFor="let state of formService.states" [value]="state.abbreviation">
+                                {{state.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Postcode</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="PostCode" formControlName="PostCode" type="number">
+                        <mat-error *ngIf="formOne.controls['PostCode'].invalid">invalid postcode</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Email Address</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="example@email.com" formControlName="emailAddress" #emailAddress>
+                        <mat-error *ngIf="formOne.controls['emailAddress'].invalid">invalid email address</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Phone Number <span class="text-danger">*</span></label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <span matPrefix>+61&nbsp;</span>
+                        <input matInput placeholder="Ex: +614xxxxxxxx" formControlName="phoneNumber"
+                            (change)="checkPhone()" type="string" required>
+                        <mat-error *ngIf="formOne.controls['phoneNumber'].invalid">invalid phone number</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>DOB</label>
+                <div class="example-container">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Choose date of birth</mat-label>
+                        <input matInput [matDatepicker]="dob" formControlName="DOB" (dateChange)="checkDate()">
+                        <mat-error *ngIf="formOne.controls['DOB'].invalid && formOne.controls['DOB'].value != ''">
+                            Guarantor should be more than 18 years old</mat-error>
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                        <mat-datepicker #dob></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="mb-2 mt-3">
+            <h3 for="">Identity Details</h3>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Passport ID</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Passport ID" formControlName="passportId">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Name on Passport</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Name on Passport" formControlName="nameOnPassport">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Passport Expiry</label>
+                <div class="example-container">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="passportExpiry" formControlName="passportExpiry"
+                            (dateChange)="onDateChange('passportExpiry')">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="passportExpiry"></mat-datepicker-toggle>
+                        <mat-datepicker #passportExpiry></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Drivers License ID</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Drivers License ID" formControlName="driverlicenseId">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Name on DL</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Name on DL" formControlName="nameOnDl">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>State of Issuance</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Select state</mat-label>
+                        <mat-select formControlName="stateOfIssuance">
+                            <mat-option>Select state</mat-option>
+                            <mat-option *ngFor="let state of formService.states" [value]="state.name">{{state.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Australian Business Number</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Australian Business Number"
+                            formControlName="australianBusinessNumber">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Tax File Number</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Tax File Number" formControlName="taxFileNumber">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-2 mt-3">
+            <h3 for="">Account Details</h3>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Account Name</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Account Name" formControlName="accountName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>BSB</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="BSB" formControlName="BSB">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Account Number</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Account Number" formControlName="accountNumber" type="number">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Bank Name</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Bank Name" formControlName="bankName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>Branch</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="Branch" formControlName="branch">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group col-md-4 col-lg-3 col-sm-6">
+                <label>SwiftID</label>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="SwiftID" formControlName="swiftId">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <app-form-seven class="d-none"></app-form-seven>
+    </form>
+</div>

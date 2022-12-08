@@ -1,0 +1,69 @@
+<form action="" [formGroup]="settlementDetails">
+    <app-hash></app-hash>
+
+    <div class="mb-2 mt-3">
+        <h3 for="">Vendor banking details</h3>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>Account Name <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Account Name" formControlName="accountName" required>
+                    <mat-error *ngIf="settlementDetails.controls['accountName'].invalid">Account Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>Account Number <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Account Number" formControlName="accountNumber" required>
+                    <mat-error *ngIf="settlementDetails.controls['accountNumber'].invalid">Account Number is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>Branch <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Branch" formControlName="branch" required>
+                    <mat-error *ngIf="settlementDetails.controls['branch'].invalid">Branch is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>BSB <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="BSB" formControlName="bsb" required>
+                    <mat-error *ngIf="settlementDetails.controls['bsb'].invalid">BSB is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>Bank Name <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Bank Name" formControlName="bankName" required>
+                    <mat-error *ngIf="settlementDetails.controls['bankName'].invalid">Bank Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group col-md-6 col-lg-4 col-sm-12">
+            <label>SwiftID <span class="text-danger">*</span></label>
+            <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="SwiftID" formControlName="swiftId" required>
+                    <mat-error *ngIf="settlementDetails.controls['swiftId'].invalid">SwiftID is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</form>
